@@ -8,7 +8,18 @@ return {
             enable = true,
         },
         sort = { sorter = 'case_sensitive' },
-        renderer = { group_empty = true }
+        renderer = {
+            group_empty = true,
+            icons = {
+                glyphs = {
+                    git = {
+                        unstaged = '',
+                        staged = '',
+                        untracked = '',
+                    }
+                },
+            }
+        }
     },
     keys = {
         { '<Leader>E', '<Cmd>NvimTreeToggle<CR>', desc = 'Toggle NvimTree' },
