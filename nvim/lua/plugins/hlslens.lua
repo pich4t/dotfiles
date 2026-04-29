@@ -4,12 +4,16 @@ return {
     opts = {},
     keys = {
         { 'n', function()
-            vim.cmd('normal! ' .. vim.v.count1 .. 'n')
-            require('hlslens').start()
+            local ok, _ = pcall(vim.cmd, 'normal! ' .. vim.v.count1 .. 'n')
+            if ok then
+                require('hlslens').start()
+            end
         end, desc = 'Next search match' },
         { 'N', function()
-            vim.cmd('normal! ' .. vim.v.count1 .. 'N')
-            require('hlslens').start()
+            local ok, _ = pcall(vim.cmd, 'normal! ' .. vim.v.count1 .. 'N')
+            if ok then
+                require('hlslens').start()
+            end
         end, desc = 'Prev search match' },
         { '*', function()
             vim.cmd('normal! *')
