@@ -53,10 +53,10 @@ return {
     { key = 'x', mods = 'LEADER', action = act.CloseCurrentPane{ confirm = true } },
     { key = 'z', mods = 'LEADER', action = act.TogglePaneZoomState },
     -- Pane Switching
-    { key = 'h', mods = 'CTRL', action = act.ActivatePaneDirection('Left') },
-    { key = 'l', mods = 'CTRL', action = act.ActivatePaneDirection('Right') },
-    { key = 'k', mods = 'CTRL', action = act.ActivatePaneDirection('Up') },
-    { key = 'j', mods = 'CTRL', action = act.ActivatePaneDirection('Down') },
+    { key = 'h', mods = 'SUPER', action = act.ActivatePaneDirection('Left') },
+    { key = 'l', mods = 'SUPER', action = act.ActivatePaneDirection('Right') },
+    { key = 'k', mods = 'SUPER', action = act.ActivatePaneDirection('Up') },
+    { key = 'j', mods = 'SUPER', action = act.ActivatePaneDirection('Down') },
     -- Pane Size Adjustment
     { key = 'h', mods = 'ALT', action = act.AdjustPaneSize{ 'Left', 1 } },
     { key = 'l', mods = 'ALT', action = act.AdjustPaneSize{ 'Right', 1 } },
