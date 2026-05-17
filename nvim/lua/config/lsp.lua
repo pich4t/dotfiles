@@ -13,8 +13,10 @@ vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, { desc = 'Show diagn
 -- LSP buffer keymaps
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
-        local opts = { buffer = args.buf }
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        local keyset = function (mode, lhs, rhs, desc)
+            vim.keymap.set(mode, lhs, rhs, { buffer = args.buf, desc = desc })
+        end
+        keyset('n', 'gd', vim.lsp.buf.definition, 'Go to definition')
     end
 })
 
