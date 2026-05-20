@@ -1,6 +1,6 @@
 return {
-	'sphamba/smear-cursor.nvim',
-	opts = {},
-    -- sandwichと干渉する
-    enabled = false
+    'sphamba/smear-cursor.nvim',
+    opts = {},
+    -- Conflicts with sandwich
+    enabled = false,
 }

@@ -1,0 +1,11 @@
+# Line breaks
+line_endings = "Unix"
+column_width = 120
+
+# Indentation
+indent_type = "Spaces"
+indent_width = 4
+
+# Style
+quote_style = "AutoPreferSingle"
+call_parentheses = "Always"
