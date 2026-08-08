@@ -4,7 +4,7 @@ return {
     opts = {
         options = {
             -- icons_enabled = false,
-            theme = 'dracula'
-        }
-    }
+            theme = 'dracula',
+        },
+    },
 }

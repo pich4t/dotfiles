@@ -1,6 +1,6 @@
 # Line breaks
 line_endings = "Unix"
-column_width = 120
+column_width = 240
 
 # Indentation
 indent_type = "Spaces"

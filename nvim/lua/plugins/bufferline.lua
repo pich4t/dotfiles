@@ -12,11 +12,11 @@ return {
                 return ' ' .. count
             end,
             indicator = {
-                style = 'underline'
+                style = 'underline',
             },
             offsets = {
-                { filetype = 'NvimTree', text = 'File Explorer', text_align = 'left' }
-            }
+                { filetype = 'NvimTree', text = 'File Explorer', text_align = 'left' },
+            },
         },
         highlights = {
             buffer_selected = { italic = false, sp = indicator_color },
@@ -34,8 +34,8 @@ return {
             modified_selected = { sp = indicator_color },
             pick_selected = { sp = indicator_color },
             close_button_selected = { sp = indicator_color },
-            indicator_selected = { sp = indicator_color }
-        }
+            indicator_selected = { sp = indicator_color },
+        },
     },
     keys = {
         { '<C-h>', '<Cmd>BufferLineCyclePrev<CR>', desc = 'Prev buffer' },

@@ -7,6 +7,6 @@ autocmd('ColorScheme', {
         vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'NONE' })
         vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'NONE' })
         vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'NONE' })
-    end
+    end,
 })
 vim.cmd.colorscheme('default')

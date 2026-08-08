@@ -16,13 +16,13 @@ return {
                         unstaged = '',
                         staged = '',
                         untracked = '',
-                    }
+                    },
                 },
-            }
-        }
+            },
+        },
     },
     keys = {
         { '<Leader>E', '<Cmd>NvimTreeToggle<CR>', desc = 'Toggle NvimTree' },
         { '<Leader>e', '<Cmd>NvimTreeFocus<CR>', desc = 'Focus NvimTree' },
-    }
+    },
 }

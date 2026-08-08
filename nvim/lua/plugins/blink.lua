@@ -9,5 +9,5 @@ return {
             ['<C-k>'] = { 'select_prev', 'fallback' },
         },
         appearance = { nerd_font_variant = 'normal' },
-    }
+    },
 }
