@@ -19,3 +19,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keyset('n', 'gd', vim.lsp.buf.definition, 'Go to definition')
     end,
 })
+
+-- Let lua_ls know about the 'vim' global
+vim.lsp.config('lua_ls', {
+    settings = {
+        Lua = {
+            diagnostics = { globals = { 'vim' } },
+        },
+    },
+})
