@@ -10,3 +10,11 @@ autocmd('ColorScheme', {
     end,
 })
 vim.cmd.colorscheme('default')
+
+-- Don't continue comment leaders on <Enter> (r) or o/O (o).
+-- Runtime ftplugins add "cro" per buffer, so this has to be buffer-local.
+autocmd('FileType', {
+    callback = function()
+        vim.opt_local.formatoptions:remove({ 'r', 'o' })
+    end,
+})
