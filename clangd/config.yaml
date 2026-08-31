@@ -1,13 +1,22 @@
 CompileFlags:
   Compiler: /opt/homebrew/bin/g++-13
   Add:
-    - -std=gnu++20
-    - -I/opt/homebrew/include
-    - -I/opt/homebrew/Cellar/gcc/13.2.0/include/c++/13
-    - -I/opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/aarch64-apple-darwin23
+    # AtCoder のジャッジと同じ C++23。実コンパイルも g++-13 -std=gnu++23 に揃える
+    # （g++-13 の既定は gnu++17 なので、無指定だとエディタと実結果がズレる）
+    - -std=gnu++23
+
+    # Apple の libc++ を検索パスから外す。これが無いと libstdc++ と libc++ が
+    # 二重に読み込まれ、std::abs などが衝突して bits/stdc++.h が丸ごと壊れる
+    - -nostdinc++
+
+    # g++-13 自身の libstdc++ を明示的に指定する。
+    # -nostdinc++ は -isystem 系（--query-driver が追加するものも含む）を消すが
+    # -I は残るため、query-driver ではなく -I で渡す必要がある。
+    # gcc をアップグレードしたらこの 3 行を更新する。正しいパスは
+    #   g++-13 -E -x c++ -v /dev/null
+    # の "#include <...> search starts here:" 以下で確認できる。
+    - -I/opt/homebrew/opt/gcc/include/c++/13
+    - -I/opt/homebrew/opt/gcc/include/c++/13/aarch64-apple-darwin23
+    - -I/opt/homebrew/opt/gcc/include/c++/13/backward
   Remove:
     - -W*
-
-Diagnostics:
-  Suppress:
-    - pp_file_not_found
